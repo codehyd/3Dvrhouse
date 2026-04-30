@@ -14,7 +14,7 @@ function ResidentialDetails() {
   const containerRef = useRef<HTMLDivElement>(null);
   const threeCoreRef = useRef<ThreejsCore | null>(null);
 
-  const [ribbon, setRibbon] = useState<ILivingStatusType>("drawingRoom");
+  const [, setRibbon] = useState<ILivingStatusType>("drawingRoom");
 
   // 加载当前房间的模型
   const loadLivingInfo = useCallback((currentRibbon: ILivingStatusType) => {
