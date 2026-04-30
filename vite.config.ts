@@ -16,11 +16,14 @@ export default defineConfig({
     modulePreload: {
       polyfill: false,
     },
-  },
-
-  preview: {
-    headers: {
-      "Content-Type": "application/javascript",
+    rollupOptions: {
+      output: {
+        assetFileNames: "[name].[ext]",
+        chunkFileNames: "[name].js",
+        entryFileNames: "[name].js",
+      },
     },
   },
+
+  publicDir: "public",
 });
