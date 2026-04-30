@@ -18,7 +18,7 @@ function Home() {
   return (
     <>
       <Button type="primary" onClick={handleNavToResidentialDetails}>
-        Button
+        点击进入房源1
       </Button>
     </>
   );
