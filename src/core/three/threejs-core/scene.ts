@@ -19,4 +19,9 @@ export class SceneMange {
   addSceneChild(child: THREE.Object3D) {
     (this.scene!.children[0] as THREE.Group).add(child);
   }
+
+  // 移除场景子元素
+  removeSceneChild(child: THREE.Object3D) {
+    (this.scene!.children[0] as THREE.Group).remove(child);
+  }
 }

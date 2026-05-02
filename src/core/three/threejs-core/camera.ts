@@ -12,7 +12,14 @@ export class CameraMange {
     );
   }
 
-  setPosition(position: THREE.Vector3) {
-    this.camera!.position.copy(position);
+  // 获取相机位置
+  getPosition() {
+    return this.camera!.position;
+  }
+
+  // 设置相机位置
+  setPosition(position: { x: number; y: number; z: number }) {
+    const vector3 = new THREE.Vector3(position.x, position.y, position.z);
+    this.camera!.position.copy(vector3);
   }
 }

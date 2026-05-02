@@ -1,3 +1,4 @@
+import * as THREE from "three";
 import { ILivingStatus } from "../types";
 
 // cloakroom
@@ -48,6 +49,11 @@ import toiletL from "@/assets/images/material/toilet/mobile_l.jpg";
 import toiletR from "@/assets/images/material/toilet/mobile_r.jpg";
 import toiletU from "@/assets/images/material/toilet/mobile_u.jpg";
 
+// 标记点配置
+import iconTop from "@/assets/images/icon/icon_top.png";
+import iconRight from "@/assets/images/icon/icon_right.png";
+import iconLeft from "@/assets/images/icon/icon_left.png";
+
 export const livingDetail: ILivingStatus[] = [
   {
     id: "living_1",
@@ -87,6 +93,97 @@ export const livingDetail: ILivingStatus[] = [
         secondaryBedroomB,
       ],
       toilet: [toiletR, toiletL, toiletU, toiletD, toiletF, toiletB],
+    },
+    marker: {
+      cloakroom: [
+        {
+          position: new THREE.Vector3(16, -12, 43),
+          scale: 7,
+          name: "主卧",
+          materialName: "masterBedroom",
+          icon: iconTop,
+        },
+        {
+          position: new THREE.Vector3(40, 12, -15),
+          scale: 5,
+          name: "卫生间",
+          materialName: "toilet",
+          icon: iconTop,
+        },
+      ],
+      drawingRoom: [
+        {
+          position: new THREE.Vector3(-12, 3, -48),
+          scale: 7,
+          name: "主卧",
+          materialName: "masterBedroom",
+          icon: iconTop,
+        },
+        {
+          position: new THREE.Vector3(-45, -1, 20),
+          scale: 7,
+          name: "厨房",
+          materialName: "kitchen",
+          icon: iconTop,
+        },
+        {
+          position: new THREE.Vector3(47, 0, 38),
+          scale: 7,
+          name: "次卧",
+          materialName: "secondaryBedroom",
+          icon: iconTop,
+        },
+      ],
+      kitchen: [
+        {
+          position: new THREE.Vector3(-5, -19, 50),
+          scale: 10,
+          name: "客厅",
+          materialName: "drawingRoom",
+          icon: iconTop,
+        },
+      ],
+      masterBedroom: [
+        {
+          position: new THREE.Vector3(-49, 0, 17),
+          scale: 5,
+          name: "衣帽间",
+          materialName: "cloakroom",
+          icon: iconTop,
+        },
+        {
+          position: new THREE.Vector3(-49, 0, 10),
+          scale: 5,
+          name: "卫生间",
+          materialName: "toilet",
+          icon: iconRight,
+        },
+        {
+          position: new THREE.Vector3(-49, 0, 36),
+          scale: 5,
+          name: "客厅",
+          materialName: "drawingRoom",
+          icon: iconLeft,
+        },
+      ],
+      secondaryBedroom: [
+        {
+          position: new THREE.Vector3(-22, -2, 16),
+          scale: 7,
+          name: "客厅",
+          materialName: "drawingRoom",
+          icon: iconLeft,
+        },
+      ],
+      toilet: [
+        {
+          position: new THREE.Vector3(49, 1, 4),
+          scale: 7,
+          name: "衣帽间",
+          materialName: "cloakroom",
+          icon: iconTop,
+        },
+      ],
     },
   },
 ];

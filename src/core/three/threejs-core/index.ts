@@ -7,6 +7,7 @@ import { RendererMange } from "./renderer";
 import { SceneMange } from "./scene";
 
 import { OrbitControlsMange } from "../threejs-controller/orbitControls.ts";
+import { RaycasterMange } from "./raycaster.ts";
 
 export class ThreejsCore {
   public id: string;
@@ -29,6 +30,11 @@ export class ThreejsCore {
   private _orbitControlsMange: OrbitControlsMange | null = null;
   public get orbitControlsMange() {
     return this._orbitControlsMange!;
+  }
+
+  private _raycasterMange: RaycasterMange | null = null;
+  public get raycasterMange() {
+    return this._raycasterMange!;
   }
 
   constructor(
@@ -82,6 +88,8 @@ export class ThreejsCore {
         this._orbitControlsMange?.update();
       });
     }
+
+    this._raycasterMange = new RaycasterMange(this);
   }
 
   public onWindowResize(): void {
