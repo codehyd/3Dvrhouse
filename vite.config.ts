@@ -26,4 +26,5 @@ export default defineConfig({
   },
 
   publicDir: "public",
+  base: "/3Dvrhouse/",
 });
